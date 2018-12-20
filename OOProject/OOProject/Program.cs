@@ -10,14 +10,14 @@ namespace OOProject
     {
         static void Main(string[] args)
         {
-            Vector aVector = new Vector(5, new ConsolePrinter());
+            Vector aVector = new Vector("A", 5, new ConsolePrinter());
             aVector.FillWithRandomValues(20);
             aVector.Print();
 
             aVector.ChangeMinAndMax();
             aVector.Print();
 
-            Vector bVector = new Vector(5, new ConsolePrinter());
+            Vector bVector = new Vector("B", 5, new ConsolePrinter());
             bVector.FillWithRandomValues(20);
             bVector.Print();
 

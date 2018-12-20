@@ -9,6 +9,7 @@ namespace OOProject
 {
     interface IPrinter
     {
+        void PrintHeader(string name);
         void Print(IEnumerable collection);
     }
 }

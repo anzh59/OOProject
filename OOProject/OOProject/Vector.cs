@@ -11,11 +11,13 @@ namespace OOProject
         private int[] _elements;
         private Random _random = new Random();
         private IPrinter _printer;
+        private string _name;
 
-        public Vector(int count, IPrinter printer)
+        public Vector(string name, int count, IPrinter printer)
         {
             _elements = new int[count];
             _printer = printer;
+            _name = name;
         }
 
         public int ElementsCount => _elements.Length;
@@ -58,7 +60,7 @@ namespace OOProject
             if (a.ElementsCount != b.ElementsCount)
                 Console.WriteLine("Cannot perform the operation: vector's length is different");
 
-            Vector c = new Vector(a.ElementsCount);
+            Vector c = new Vector("C", a.ElementsCount, new ConsolePrinter());
 
             for (int i = 0; i < a.ElementsCount; i++)
             {
@@ -70,6 +72,7 @@ namespace OOProject
 
         public void Print()
         {
+            _printer.PrintHeader(_name);
             _printer.Print(_elements);
         }
     }
