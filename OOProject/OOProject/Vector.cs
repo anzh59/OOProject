@@ -18,12 +18,20 @@ namespace OOProject
             _printer = printer;
         }
 
-        public void FillWithRandomValues()
+        public int ElementsCount => _elements.Length;
+
+        public void FillWithRandomValues(int maxValue)
         {
             for (int i = 0; i < _elements.Length; i++)
             {
-                _elements[i] = _random.Next(20);
+                _elements[i] = _random.Next(maxValue);
             }
+        }
+
+        public int this[int index]
+        {
+            get => _elements[index];
+            set => _elements[index] = value;
         }
 
         public void ChangeMinAndMax()
@@ -43,6 +51,21 @@ namespace OOProject
             int tmpValue = _elements[minIndex];
             _elements[minIndex] = _elements[maxIndex];
             _elements[maxIndex] = tmpValue;
+        }
+
+        public static Vector operator +(Vector a, Vector b)
+        {
+            if (a.ElementsCount != b.ElementsCount)
+                Console.WriteLine("Cannot perform the operation: vector's length is different");
+
+            Vector c = new Vector(a.ElementsCount);
+
+            for (int i = 0; i < a.ElementsCount; i++)
+            {
+                c[i] = a[i] + b[i];
+            }
+
+            return c;
         }
 
         public void Print()
