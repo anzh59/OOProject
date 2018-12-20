@@ -11,11 +11,11 @@ namespace OOProject
         static void Main(string[] args)
         {
             Random random = new Random();
-            Vector aVector = new Vector(5) { Printer = new ConsolePrinter() };
+            Vector aVector = new Vector(7) { Printer = new ConsolePrinter() };
 
             for (int i = 0; i < aVector.ElementsCount; i++)
             {
-                aVector[i] = random.Next(20);
+                aVector[i] = random.Next(25);
             }
 
             aVector.Print();
@@ -23,11 +23,11 @@ namespace OOProject
             aVector.ChangeMinAndMax();
             aVector.Print();
 
-            Vector bVector = new Vector(5) { Printer = new ConsolePrinter() };
+            Vector bVector = new Vector(7) { Printer = new ConsolePrinter() };
 
             for (int i = 0; i < bVector.ElementsCount; i++)
             {
-                bVector[i] = random.Next(20);
+                bVector[i] = random.Next(25);
             }
 
             bVector.Print();
