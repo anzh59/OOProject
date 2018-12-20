@@ -10,10 +10,12 @@ namespace OOProject
     {
         private int[] _elements;
         private Random _random = new Random();
+        private IPrinter _printer;
 
-        public Vector(int count)
+        public Vector(int count, IPrinter printer)
         {
             _elements = new int[count];
+            _printer = printer;
         }
 
         public void FillWithRandomValues()
@@ -45,11 +47,7 @@ namespace OOProject
 
         public void Print()
         {
-            Console.WriteLine("Vector elements:");
-            foreach (var el in _elements)
-            {
-                Console.WriteLine(el);
-            }
+            _printer.Print(_elements);
         }
     }
 }

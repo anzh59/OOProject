@@ -10,7 +10,7 @@ namespace OOProject
     {
         static void Main(string[] args)
         {
-            Vector aVector = new Vector(2);
+            Vector aVector = new Vector(5, new ConsolePrinter());
             aVector.FillWithRandomValues();
             aVector.Print();
 
