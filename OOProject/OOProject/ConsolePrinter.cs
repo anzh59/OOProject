@@ -11,10 +11,10 @@ namespace OOProject
     {
         public void Print(IEnumerable collection)
         {
-            Console.WriteLine("Vector elements:");
+            Console.WriteLine(Environment.NewLine + "Vector elements:");
             foreach (var el in collection)
             {
-                Console.WriteLine(el);
+                Console.Write(el + " ");
             }
         }
     }
