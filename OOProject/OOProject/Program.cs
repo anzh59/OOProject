@@ -19,9 +19,14 @@ namespace OOProject
 
             Vector bVector = new Vector("B", 5, new ConsolePrinter());
             bVector.FillWithRandomValues(20);
+
             bVector.Print();
 
-            (aVector + bVector).Print();
+
+            Vector cVector = (aVector + bVector);
+            cVector.Printer = new ConsolePrinter();
+
+            cVector.Print();
 
             Console.ReadKey();
         }
