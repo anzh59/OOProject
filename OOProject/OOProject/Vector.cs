@@ -8,24 +8,20 @@ namespace OOProject
 {
     class Vector
     {
-        private int[] _elements;
-        private Random _random = new Random();
+        private int[] _elements;  
         private IPrinter _printer;
 
-        public Vector(int count, IPrinter printer)
+        public Vector(int count)
         {
             _elements = new int[count];
-            _printer = printer;
         }
 
         public int ElementsCount => _elements.Length;
 
-        public void FillWithRandomValues(int maxValue)
+        public IPrinter Printer
         {
-            for (int i = 0; i < _elements.Length; i++)
-            {
-                _elements[i] = _random.Next(maxValue);
-            }
+            get => _printer;
+            set => _printer = value;
         }
 
         public int this[int index]

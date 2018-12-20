@@ -10,18 +10,33 @@ namespace OOProject
     {
         static void Main(string[] args)
         {
-            Vector aVector = new Vector(5, new ConsolePrinter());
-            aVector.FillWithRandomValues(20);
+            Random random = new Random();
+            Vector aVector = new Vector(5) { Printer = new ConsolePrinter() };
+
+            for (int i = 0; i < aVector.ElementsCount; i++)
+            {
+                aVector[i] = random.Next(20);
+            }
+
             aVector.Print();
 
             aVector.ChangeMinAndMax();
             aVector.Print();
 
-            Vector bVector = new Vector(5, new ConsolePrinter());
-            bVector.FillWithRandomValues(20);
+            Vector bVector = new Vector(5) { Printer = new ConsolePrinter() };
+
+            for (int i = 0; i < bVector.ElementsCount; i++)
+            {
+                bVector[i] = random.Next(20);
+            }
+
             bVector.Print();
 
-            (aVector + bVector).Print();
+
+            Vector cVector = (aVector + bVector);
+            cVector.Printer = new ConsolePrinter();
+
+            cVector.Print();
 
             Console.ReadKey();
         }
